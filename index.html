@@ -2,104 +2,322 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Space Violet</title>
+    <title>Secondary School Manufacturing Company</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(145deg, #22053b 0%, #6018a3 50%, #0f0036 100%);
+            color: #fff;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
         }
-        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px;
+            background: rgba(34, 8, 60, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-logo {
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            color: #dab6ff;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.08em;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .nav-links a:hover {
+            background: #6217a7;
+        }
         .container {
-            background: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin: 70px auto 0 auto;
+            padding: 40px;
+            background: rgba(34, 20, 51, 0.86);
             border-radius: 20px;
-            padding: 60px;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 32px 0 rgba(80, 30, 160, 0.4);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
             text-align: center;
         }
-        
-        h1 {
-            color: #667eea;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
         p {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
+            font-size: 1.15em;
+            line-height: 1.7;
+            text-align: center;
         }
-        
-        .cta-button {
+        .button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
+            padding: 14px 38px;
+            background: #8c4be9;
+            color: #fff;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.18em;
+            transition: background 0.2s;
+            margin-top: 15px;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        .button:hover {
+            background: #6834b2;
         }
-        
-        .features {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 2px solid #f0f0f0;
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 34px;
+            margin-bottom: 2px;
         }
-        
-        .feature-item {
-            margin: 20px 0;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            color: #555;
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.96em;
+            color: #e0c3fc;
+            cursor: pointer;
         }
-        
-        .feature-item strong {
-            color: #667eea;
+        .icon-item svg {
+            margin-bottom: 7px;
+            width: 32px;
+            height: 32px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 22px auto;
+            width: 64px;
+            height: 64px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px #541b6e;
+        }
+        /* Section styles */
+        .section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(27, 11, 51, 0.75);
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(60,20,100,0.29);
+        }
+        .section h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #dab6ff;
+            font-size: 2em;
+        }
+        .students-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .students-images img {
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(80,30,120,0.25);
+            border: 2px solid #6217a7;
+            background: #200638;
+        }
+        /* Sign in modal styles */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right:0; bottom:0;
+            background: rgba(36,10,54,0.92);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal {
+            background: #210a3e;
+            padding: 38px 32px;
+            border-radius: 18px;
+            box-shadow: 0 6px 36px #3b1499;
+            width: 340px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .modal h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #dab6ff;
+        }
+        .modal label {
+            margin-bottom: 4px;
+            color: #dab6ff;
+            font-size: 1em;
+        }
+        .modal input, .modal select {
+            padding: 8px 10px;
+            border-radius: 7px;
+            border: 1px solid #6217a7;
+            background: #251245;
+            color: #fff;
+            font-size: 1em;
+            margin-bottom: 12px;
+        }
+        .modal button {
+            background: #8c4be9;
+            color: #fff;
+            padding: 10px;
+            border-radius: 7px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 9px;
+            margin-bottom: 5px;
+        }
+        .modal button:hover {
+            background: #6217a7;
+        }
+        .close-btn {
+            background: none;
+            color: #dab6ff;
+            border: none;
+            font-size: 1.3em;
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-logo">FutureMakers</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about-section">About</a>
+            <a href="#students-section">Students</a>
+            <a href="#" id="show-signin">Sign In</a>
+        </div>
+    </nav>
     <div class="container">
-        <h1>Welcome</h1>
-        <p>Discover the power of Space Violet design for your organization</p>
-        
-        <button class="cta-button">Get Started</button>
-        
-        <div class="features">
-            <div class="feature-item">
-                <strong>For Schools</strong> - Modern education solutions with elegant design
+        <div class="logo"></div>
+        <h1>Welcome to FutureMakers Secondary School Manufacturing</h1>
+        <p>
+            Empowering students with real-world skills in manufacturing.<br>
+            Join our programs to learn, build, and innovate for tomorrow's industries!
+        </p>
+        <div class="icon-row">
+            <div class="icon-item">
+                <!-- Home icon -->
+                <svg fill="#dab6ff" viewBox="0 0 24 24">
+                    <path d="M12 3l10 8h-3v10h-6v-6h-2v6h-6v-10h-3z"/>
+                </svg>
+                Home
             </div>
-            <div class="feature-item">
-                <strong>For Secondary</strong> - Professional interfaces built for your needs
+            <div class="icon-item">
+                <!-- About icon -->
+                <svg fill="#dab6ff" viewBox="0 0 24 24">
+                    <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-7h2v-6h-2v6zm0 4h2v-2h-2v2z"/>
+                </svg>
+                About
             </div>
-            <div class="feature-item">
-                <strong>For Manufacturing</strong> - Industrial strength with beautiful aesthetics
+            <div class="icon-item">
+                <!-- Students icon -->
+                <svg fill="#dab6ff" viewBox="0 0 24 24">
+                    <path d="M12 2a7 7 0 017 7c0 2.944-2.06 5.551-4.98 6.71l-.02.01C15.917 17.879 17 19.98 17 22H7c0-2.02 1.083-4.121 2-6.27l-.02-.01C7.06 14.551 5 11.944 5 9a7 7 0 017-7z"/>
+                </svg>
+                Students
+            </div>
+            <div class="icon-item" id="show-signin-icon">
+                <!-- Sign In icon -->
+                <svg fill="#dab6ff" viewBox="0 0 24 24">
+                    <path d="M15 14c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm3-8c-1.1 0-2 .9-2 2v2h-8v-2c0-1.1-.9-2-2-2s-2 .9-2 2v2c0 5.25 4.75 9.75 10 9.75s10-4.5 10-9.75v-2c0-1.1-.9-2-2-2z"/>
+                </svg>
+                Sign In
             </div>
         </div>
+        <a href="#about-section" class="button">Learn More</a>
     </div>
+    <!-- About Section -->
+    <div class="section" id="about-section">
+        <h2>About Our School Manufacturing Program</h2>
+        <p>
+            At FutureMakers, students discover hands-on skills in modern manufacturing, teamwork, and technology. Our experienced mentors and innovative curriculum prepare them for success in tomorrow's industries.
+        </p>
+    </div>
+    <!-- Students Section -->
+    <div class="section" id="students-section">
+        <h2>Students in Action</h2>
+        <p>
+            Here are some moments of our students engaged in learning and manufacturing:
+        </p>
+        <div class="students-images">
+            <!-- Image 1 -->
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?fit=crop&w=400&q=80" alt="Students in class">
+            <!-- Image 2 -->
+            <img src="https://images.unsplash.com/photo-1556740772-1a741367b93e?fit=crop&w=400&q=80" alt="Students working together">
+            <!-- Image 3 -->
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=400&q=80" alt="Student teamwork">
+        </div>
+    </div>
+    <!-- Sign In Modal -->
+    <div class="modal-bg" id="modal-bg">
+        <div class="modal">
+            <button class="close-btn" id="close-modal" title="Close">&times;</button>
+            <h3>Sign In</h3>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Show modal with Any sign in click
+        document.getElementById('show-signin').onclick = function(e){
+            e.preventDefault();
+            document.getElementById('modal-bg').style.display = 'flex';
+        };
+        document.getElementById('show-signin-icon').onclick = function(e){
+            document.getElementById('modal-bg').style.display = 'flex';
+        };
+        document.getElementById('close-modal').onclick = function(){
+            document.getElementById('modal-bg').style.display = 'none';
+        };
+        // Prevent form submission for demo
+        document.querySelector('.modal form').onsubmit = function(e){
+            e.preventDefault();
+            alert("Sign in submitted!\n(You can add further code to handle login.)");
+            document.getElementById('modal-bg').style.display = 'none';
+        };
+    </script>
 </body>
 </html>
